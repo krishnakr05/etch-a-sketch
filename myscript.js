@@ -19,7 +19,7 @@ function createGrid(n){
 
 }
 
-const btn= document.getElementById('btn');
+const btn= document.getElementById('btn-size');
 btn.addEventListener('click', ()=>{
     let input= prompt("Enter grid size ")
     let gridsize=parseInt(input);
@@ -30,6 +30,14 @@ btn.addEventListener('click', ()=>{
         container.innerHTML = ""
         createGrid(gridsize)
     }
+})
+
+const reset= document.getElementById('reset');
+reset.addEventListener('click', ()=>{
+    const squares= container.querySelectorAll('.square');
+    squares.forEach(sq=>{
+        sq.style.backgroundColor="";
+    })
 })
 
 createGrid(16);
