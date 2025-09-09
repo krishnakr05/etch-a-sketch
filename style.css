@@ -18,6 +18,5 @@ body{
 
 .square{
     box-sizing: border-box;
-    flex: 0 0 calc(100%/16);
-    border: 1px solid #ddd
+    border: 1px solid #ddd;
 }
