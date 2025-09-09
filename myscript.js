@@ -1,21 +1,4 @@
 const container= document.getElementById('container');
-/*
-const frag= document.createDocumentFragment();
-for(let i=0; i< 256; i++){
-    const sq= document.createElement('div');
-    sq.className= 'square';
-    
-    sq.style.flex=`0 0 calc(100%/16)`;
-
-    sq.addEventListener('mouseenter', () => {
-        sq.style.backgroundColor = "black";
-    });
-
-
-    frag.appendChild(sq)
-}
-container.appendChild(frag);
-*/
 
 function createGrid(n){
     const frag= document.createDocumentFragment();

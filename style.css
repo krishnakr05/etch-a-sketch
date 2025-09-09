@@ -6,17 +6,23 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.button{
+    margin: 2vh;
 }
 
 #container{
     display: flex;
     flex-wrap: wrap;
-    border: 2px solid #ddd;
+    border: 2px solid ;
     width: 640px;
     height: 640px;
 }
 
 .square{
     box-sizing: border-box;
-    border: 1px solid #ddd;
+    border: 1px solid ;
 }
