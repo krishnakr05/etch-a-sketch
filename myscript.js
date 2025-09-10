@@ -1,6 +1,7 @@
 const container= document.getElementById('container');
 
 let mouseDown= false;
+let eraseMode=false;
 
 document.body.addEventListener("mousedown", ()=> mouseDown=true)
 document.body.addEventListener("mouseup", ()=> mouseDown=false)
@@ -14,12 +15,12 @@ function createGrid(n){
         sq.style.flex=`0 0 calc(100%/${n})`;
 
         sq.addEventListener('mousedown', () => {
-            sq.style.backgroundColor = "black";
+            sq.style.backgroundColor = eraseMode? "white" : "black";
         });
 
         sq.addEventListener('mouseenter', ()=>{
             if(mouseDown==true){
-                sq.style.backgroundColor = "black";
+                sq.style.backgroundColor = eraseMode? "white" : "black";
             }
         })
 
@@ -49,6 +50,15 @@ reset.addEventListener('click', ()=>{
     squares.forEach(sq=>{
         sq.style.backgroundColor="";
     })
+})
+
+const erase= document.getElementById('erase');
+erase.textContent = "Erase Mode: OFF";
+erase.addEventListener('click', ()=>{
+    eraseMode= !eraseMode
+    erase.textContent = eraseMode 
+        ? "Erase Mode: ON" 
+        : "Erase Mode: OFF";
 })
 
 createGrid(16);
