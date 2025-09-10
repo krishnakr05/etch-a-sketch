@@ -1,5 +1,10 @@
 const container= document.getElementById('container');
 
+let mouseDown= false;
+
+document.body.addEventListener("mousedown", ()=> mouseDown=true)
+document.body.addEventListener("mouseup", ()=> mouseDown=false)
+
 function createGrid(n){
     const frag= document.createDocumentFragment();
     for(let i=0; i< (n*n); i++){
@@ -8,9 +13,15 @@ function createGrid(n){
         
         sq.style.flex=`0 0 calc(100%/${n})`;
 
-        sq.addEventListener('mouseenter', () => {
+        sq.addEventListener('mousedown', () => {
             sq.style.backgroundColor = "black";
         });
+
+        sq.addEventListener('mouseenter', ()=>{
+            if(mouseDown==true){
+                sq.style.backgroundColor = "black";
+            }
+        })
 
 
         frag.appendChild(sq)
